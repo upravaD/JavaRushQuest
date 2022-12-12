@@ -8,6 +8,7 @@ public class QuestConsole {
     private Question currentQuestion;
 
     public QuestConsole() {
+        welcome();
     }
 
     public void setUserName(String userName) {

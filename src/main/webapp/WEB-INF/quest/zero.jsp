@@ -6,16 +6,16 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.quest.model.Question" %>
-<%@ page import="com.quest.servlet.QuestServlet" %>
 <%@ page import="java.time.ZonedDateTime" %>
+<%@ page import="com.quest.model.Question" %>
+<%@ page import="com.quest.model.Quest" %>
 <html>
 <head>
     <title>JavaRush Quest</title>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
-<p>User name: <%=QuestServlet.quest.getUserName()%></p>
+<p>User name: <%=Quest.getInstance().getUserName()%></p>
 <p>Time:      <%=ZonedDateTime.now()%></p>
 <br>
 <div style="text-align: center;">
@@ -26,7 +26,7 @@
         <label><input type="radio" name="choose"></label><c:out value="<%=Question.ONE.getQuestion()%>"/>
         <label><input type="radio" name="choose"></label><c:out value="<%=Question.DRUNK.getQuestion()%>"/>
     </p>
-    <button onclick="window.location ='/quest'" type="submit" >NEXT</button>
+    <button onclick="window.location ='/quest'" type="submit">NEXT</button>
 </div>
 </body>
 </html>
