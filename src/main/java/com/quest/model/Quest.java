@@ -1,9 +1,14 @@
 package com.quest.model;
 
+/**
+ *  Quest Model
+ */
+
 public class Quest {
-    private String userName;
     private static Quest quest;
+    private String userName;
     private Question currentQuestion;
+    private Question startQuestion;
 
     private Quest(){
 
@@ -16,17 +21,22 @@ public class Quest {
         return quest;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     public Question getCurrentQuestion() {
         return currentQuestion;
     }
     public void setCurrentQuestion(Question currentQuestion) {
         this.currentQuestion = currentQuestion;
     }
-
-    public String getUserName() {
-        return userName;
+    public Question getStartQuestion() {
+        return startQuestion;
     }
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setStartQuestion(Question startQuestion) {
+        this.startQuestion = startQuestion;
     }
 }

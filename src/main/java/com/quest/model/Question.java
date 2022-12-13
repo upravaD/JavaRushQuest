@@ -1,15 +1,20 @@
 package com.quest.model;
 
 /**
- * com.quest.model.Quest DataBase
+ *  Quest DataBase
  */
 
 public enum Question {
-    WELCOME("Welcome to JavaRush Quest!\n"),
 
-    // Positive way
+    // Service
+    WELCOME("Welcome to JavaRush Quest!\n"),
+    NEXT("Next question!"),
+    NEXT_2("Excellent choice!"),
     ZERO("\nThere is clearly a need to change something in life."),
-    CHOOSE("What to choose?"),
+    CHOOSE("What do you choose?"),
+    NULL(null),
+
+    // Positive way,
     ONE("Go to study at JavaRush."),
     TWO("Learn Java Syntax."),
     THREE("Learn Java Core."),
