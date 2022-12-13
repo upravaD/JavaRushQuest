@@ -12,16 +12,10 @@ import java.io.IOException;
 
 @WebServlet(name = "RegistrationServlet", value = "/reg")
 public class RegistrationServlet extends HttpServlet {
-    QuestService questService = new QuestService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
-//        Quest.getInstance().setUserName(name);
-//
-//        if (Quest.getInstance().getCurrentQuestion() == null) {
-//            Quest.getInstance().setCurrentQuestion(Question.ONE);
-//            Quest.getInstance().setStartQuestion(Question.ZERO);
-//        }
+
         QuestService.questService.initQuest(name);
 
         if (name == null) {

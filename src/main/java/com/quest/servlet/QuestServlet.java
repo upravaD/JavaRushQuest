@@ -13,8 +13,6 @@ import java.io.IOException;
 
 @WebServlet(name = "QuestServlet", value = "/quest")
 public class QuestServlet extends HttpServlet {
-    QuestService questService = new QuestService();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String choose = req.getParameter("choose");
@@ -29,7 +27,6 @@ public class QuestServlet extends HttpServlet {
                     .getRequestDispatcher(JSPPath.QUEST.getPath())
                     .forward(req, resp);
         }
-
     }
 
     @Override

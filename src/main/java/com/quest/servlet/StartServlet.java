@@ -12,8 +12,6 @@ import java.io.IOException;
 
 @WebServlet(name = "StartServlet", value = "/start")
 public class StartServlet extends HttpServlet {
-    QuestService questService = new QuestService();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Перенаправление запроса на страницу index.jsp через сервер
@@ -24,9 +22,6 @@ public class StartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Quest.getInstance().setStartQuestion(Question.ZERO);
-//        Quest.getInstance().setCurrentQuestion(null);
-//        Quest.getInstance().setUserName(null);
         QuestService.questService.invalidateQuest();
         // Перенаправление запроса на страницу index.jsp через сервер
         getServletContext()
