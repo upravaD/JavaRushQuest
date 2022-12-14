@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-1510.335781070152" y="179.95618178049074">com.quest.controller.QuestInitialize</node>
+    <node x="-1514.335781070152" y="32.45618178049074">com.quest.controller.QuestInitializeTest</node>
+    <node x="-1111.6749674895082" y="-122.02884241427222">com.quest.servlet.QuestServlet</node>
+    <node x="-1575.6944639455724" y="-217.2983227438366">com.quest.controller.QuestService</node>
+    <node x="-694.5744546766465" y="-348.8460361307172">com.quest.servlet.StartServlet</node>
+    <node x="-986.5494148524833" y="-358.44570409987796">com.quest.controller.QuestConsole</node>
+    <node x="-715.5312787589604" y="-126.7673256175355">com.quest.servlet.RegistrationServlet</node>
+    <node x="-715.2756596905227" y="37.94878519307497">com.quest.model.JSPPath</node>
+    <node x="-1464.2235067847512" y="-365.44570409987796">com.quest.Main</node>
+    <node x="-1285.167506520952" y="38.695930111636955">com.quest.model.Quest</node>
+    <node x="-1005.397598717019" y="58.53014341014398">com.quest.model.Question</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.quest.model.Quest" target="com.quest.controller.QuestInitialize" relationship="REALIZATION">
+      <point x="-93.0" y="74.26025166885378" />
+      <point x="82.5" y="0.0" />
+    </edge>
+    <edge source="com.quest.model.Quest" target="com.quest.controller.QuestService" relationship="REALIZATION">
+      <point x="-15.000493479047918" y="-105.0" />
+      <point x="166.52646394557246" y="49.0" />
+    </edge>
+    <edge source="com.quest.controller.QuestConsole" target="com.quest.model.Question" relationship="TO_ONE">
+      <point x="-94.49958514751665" y="-2.959001220688151E-4" />
+      <point x="-1129.175" y="-274.946" />
+      <point x="-1129.175" y="8.0" />
+      <point x="-914.8979999999999" y="8.0" />
+      <point x="-4.012829808743845E-4" y="-72.50014341014399" />
+    </edge>
+    <edge source="com.quest.model.Quest" target="com.quest.model.Question" relationship="TO_ONE">
+      <point x="-4.934790479182993E-4" y="-104.99993011163696" />
+      <point x="-1192.168" y="8.0" />
+      <point x="-914.8979999999999" y="8.0" />
+      <point x="-4.012829808743845E-4" y="-72.50014341014399" />
+    </edge>
+    <edge source="com.quest.Main" target="com.quest.controller.QuestConsole" relationship="CREATE">
+      <point x="0.0" y="38.5" />
+      <point x="-1389.7235067847512" y="-329.94570409987796" />
+      <point x="-892.0494148524833" y="-329.94570409987796" />
+      <point x="0.0" y="-83.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="true" x="-967.0" y="-55.0" />
+  <SelectedNodes>
+    <node>com.quest.controller.QuestInitializeTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

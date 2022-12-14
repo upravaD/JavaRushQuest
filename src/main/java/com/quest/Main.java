@@ -1,6 +1,6 @@
 package com.quest;
 
-import com.quest.model.QuestConsole;
+import com.quest.controller.QuestConsole;
 
 public class Main {
     public static void main(String[] args) {

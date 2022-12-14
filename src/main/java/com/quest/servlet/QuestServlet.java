@@ -1,7 +1,7 @@
 package com.quest.servlet;
 
 import com.quest.model.JSPPath;
-import com.quest.model.QuestService;
+import com.quest.model.Quest;
 import com.quest.model.Question;
 
 import javax.servlet.ServletException;
@@ -17,16 +17,17 @@ public class QuestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String choose = req.getParameter("choose");
 
+        String jspPath;
         if (choose == null) {
-            getServletContext()
-                    .getRequestDispatcher(JSPPath.QUEST.getPath())
-                    .forward(req, resp);
+            jspPath = JSPPath.QUEST.getPath();
         } else {
-            QuestService.questService.nextQuestion(Question.valueOf(choose), req, resp);
-            getServletContext()
-                    .getRequestDispatcher(JSPPath.QUEST.getPath())
-                    .forward(req, resp);
+            Quest.getInstance().nextQuestion(Question.valueOf(choose), req, resp);
+            jspPath = JSPPath.QUEST.getPath();
         }
+
+        getServletContext()
+                .getRequestDispatcher(jspPath)
+                .forward(req, resp);
     }
 
     @Override

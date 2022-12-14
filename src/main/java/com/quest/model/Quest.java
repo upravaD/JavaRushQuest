@@ -1,10 +1,13 @@
 package com.quest.model;
 
+import com.quest.controller.QuestInitialize;
+import com.quest.controller.QuestService;
+
 /**
  *  Quest Model
  */
 
-public class Quest {
+public class Quest implements QuestService, QuestInitialize {
     private static Quest quest;
     private String userName;
     private Question currentQuestion;

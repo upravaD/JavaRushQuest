@@ -1,7 +1,7 @@
 package com.quest.servlet;
 
 import com.quest.model.JSPPath;
-import com.quest.model.QuestService;
+import com.quest.model.Quest;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +22,9 @@ public class StartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        QuestService.questService.invalidateQuest();
+        // Аннулирование данных
+        Quest.getInstance().invalidateQuest();
+        req.getSession(true).invalidate();
         // Перенаправление запроса на страницу index.jsp через сервер
         getServletContext()
                 .getRequestDispatcher(JSPPath.INDEX.getPath())

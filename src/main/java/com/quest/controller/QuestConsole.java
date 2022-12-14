@@ -1,4 +1,6 @@
-package com.quest.model;
+package com.quest.controller;
+
+import com.quest.model.Question;
 
 import java.util.Scanner;
 

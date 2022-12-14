@@ -1,4 +1,8 @@
-package com.quest.model;
+package com.quest.controller;
+
+import com.quest.model.JSPPath;
+import com.quest.model.Quest;
+import com.quest.model.Question;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -6,11 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Random;
 
-public class QuestService {
-    public static QuestService questService = new QuestService();
-    Question currentQuestion = Quest.getInstance().getCurrentQuestion();
-
-    public void nextQuestion(Question parameter, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+public interface QuestService {
+    default void nextQuestion(Question parameter, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Question currentQuestion = Quest.getInstance().getCurrentQuestion();
         switch (parameter) {
             case NULL -> currentQuestion = Question.ONE;
             case ONE -> {
@@ -56,19 +58,5 @@ public class QuestService {
         }
         Quest.getInstance().setCurrentQuestion(Question.BAD_END);
         req.getServletContext().getRequestDispatcher(JSPPath.BAD_END.getPath()).forward(req, resp);
-    }
-
-    public void initQuest(String name) {
-        Quest.getInstance().setUserName(name);
-        if (Quest.getInstance().getCurrentQuestion() == null) {
-            Quest.getInstance().setCurrentQuestion(Question.ONE);
-            Quest.getInstance().setStartQuestion(Question.ZERO);
-        }
-    }
-
-    public void invalidateQuest() {
-        Quest.getInstance().setStartQuestion(Question.ZERO);
-        Quest.getInstance().setCurrentQuestion(null);
-        Quest.getInstance().setUserName(null);
     }
 }

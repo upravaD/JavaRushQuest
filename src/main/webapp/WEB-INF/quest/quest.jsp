@@ -11,7 +11,8 @@
 <body>
 
 <div style="text-align: end;">
-    <p>User name: <%=Quest.getInstance().getUserName()%></p>
+    <p>SessionID: <%=request.getRequestedSessionId()%></p>
+    <p>User name: <%=request.getSession().getAttribute("name")%></p>
     <p>Date:      <%=LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd MMMM yyyy" + "г"))%></p>
     <p>Time:      <%=LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"))%></p>
     <p>Address:   <%=request.getLocalName()%></p>
